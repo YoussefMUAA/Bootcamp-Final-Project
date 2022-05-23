@@ -1,0 +1,191 @@
+.profile___container {
+  min-height: calc(100vh - 70px) !important;
+  display: flex;
+  align-items: center;
+}
+
+.profile {
+  border: 0;
+  padding: 0;
+  border-radius: 20px 20px;
+  box-shadow: 0px 5px 15px var(--shadow);
+}
+
+/* tamaño de la imagen */
+.img_profile {
+  width: 550px;
+  height: 450px;
+  object-fit: cover;
+}
+/* buble HELLO */
+.bubble {
+  position: relative;
+  padding: 10px;
+  background: var(--primary-color); 
+  border-color: var(--primary-color);
+  position: relative;
+  border-radius: 8px 8px 8px 8px;
+  width: 70px;
+  height: 30px;
+}
+
+.bubble p {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 30px;
+  color: var(--white-color);
+  text-align: center;
+  font-size: var(--size-content);
+  font-weight: 500;
+  letter-spacing: 1px;
+
+}
+
+.bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 20px;
+  border-top: 10px solid transparent;
+  border-top-color: inherit;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+/* Card profile */
+
+.card___title {
+  border-bottom: 1px solid var(--shadow);
+  padding-left: 10px;
+}
+
+.profile___name {
+  font-size: var(--size-title);
+  color: var(--primary-color);
+  box-shadow: 1px solid var(--shadow);
+}
+
+/* Icon admin */
+.profile___admin h4,
+.profile___admin i{
+  font-size: var(--size-content);
+}
+
+.profile___info {
+  font-size: var(--size-content);
+  font-weight: 500;
+}
+
+.profile___info___date {
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
+
+.profile___info___user {
+  color: var(--black-color);
+  display: inline !important;
+  position: relative;
+}
+
+.profile___info___user a {
+  color: var(--primary-color);
+  transition: all .2s,
+}
+
+.profile___info___user a:hover {
+  color: var(--secondary-color);
+}
+
+/* button */
+.profile___btn {
+  text-transform: uppercase;
+  font-weight: 500;
+  background: var(--primary-color);
+  color: var(--white-color);
+  transition: all .2s,
+  color .2s;
+}
+
+.profile___btn:hover {
+  background: var(--white-color);
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+/* menu icons */
+.profile___icons {
+  background-color: var(--primary-color);
+  min-height: 60px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 -5px 5px -5px var(--shadow);
+}
+
+.profile___icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+  background: rgba(255, 255, 255, .2);
+  color: var(--white-color);
+  text-decoration: none;
+  transition: background .2s, color .2s;
+}
+
+.profile___icon:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 50%;
+  box-sizing: content-box;
+  top: -7px;
+  left: -7px;
+  padding: 7px;
+  box-shadow: 0 0 0 4px var(--white-color);
+  transition: transform .2s, opacity .2s;
+  transform: scale(.8);
+  opacity: 0
+}
+
+.profile___icon:before {
+  color: var(--white-color);
+  font-size: var(--size-subtitle);
+  text-decoration: none;
+  line-height: 40px;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  display: block;
+}
+
+.profile___icons .profile___social .profile___icon:hover::before {
+  background: var(--white-color);
+  color: var(--secondary-color);
+  border-radius: 50%;
+}
+
+.profile___icons .profile___social .profile___icon:hover:after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* logout */
+.logout:hover {
+  background-color: var(--red);
+  color: var(--white-color) !important;
+  border-color: var(--white-color);
+}
+
+/* Password */
+
+.password {
+  color: var(--primary-color)
+}
+

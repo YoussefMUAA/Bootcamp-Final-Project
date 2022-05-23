@@ -1,0 +1,58 @@
+<nav class="navbar m-5 filter___btn">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center">
+      <div class="mx-2">
+        <button appAdmin type="button" class="btn my-2" data-bs-toggle="modal" data-bs-target="#newContact">Add Contact
+        </button>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="newContact" tabindex="-1" aria-labelledby="newContact" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="newContact">Add Contacts</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                  class="fa-solid fa-x"></i></button>
+            </div>
+            <div class="modal-body">
+              <!-- TODO Form Contacts -->
+              <form [formGroup]="formContact" (ngSubmit)="registerContact()">
+                <div class="form-group mb-3">
+                  <label class="mb-1">Name</label>
+                  <input type="text" class="form-control" formControlName="name">
+                  <p *ngIf="checkControl('name', 'required')" class="text-danger mt-1 small">The name must be defined.
+                  </p>
+                </div>
+                <div class="form-group mb-3">
+                  <label class="mb-1">Organization</label>
+                  <input type="text" class="form-control" formControlName="organization">
+                </div>
+                <div class="form-group mb-3">
+                  <label class="mb-1">Contact</label>
+                  <input type="text" class="form-control" formControlName="email">
+                  <p *ngIf="checkControl('email', 'required')" class="text-danger mt-1 small">The contact must be
+                    defined.
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button data-bs-dismiss="modal" type="submit" value="send" class="addContact___btn btn"
+                    [disabled]="!formContact.valid">Add
+                    Contact</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form class="d-flex filter___search">
+      <input class="form-control me-2" name="filterContacts" type="search" placeholder="Search" aria-label="Search"
+        [(ngModel)]="filterContacts">
+    </form>
+  </div>
+</nav>
+<div class="row justify-content-center">
+  <article *ngFor="let contact of contacts | filterContacts : filterContacts" class="col-auto m-2">
+    <app-contact-card [myContacts]="contact" (refreshContacts)="onRefreshContacts()"></app-contact-card>
+  </article>
+</div>

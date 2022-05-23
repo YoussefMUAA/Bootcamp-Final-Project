@@ -1,0 +1,51 @@
+/* modal title */
+.modal___title {
+  color: var(--primary-color);
+  font-size: var(--size-subtitle);
+  margin-bottom: 2px;
+}
+
+.btn-close {
+  transition: all .3s ease;
+}
+
+.btn-close:hover {
+  background-color: var(--secondary-color);
+}
+
+/* modal content */
+.form-group label {
+  color: var(--primary-color);
+  font-size: var(--size-content);
+}
+
+.member___social-media {
+  color: var(--primary-color);
+  font-size: var(--size-subtitle);
+}
+
+/* button */
+.editMember___btn {
+  padding: 7px 12px;
+  background: var(--white-color);
+  border: none;
+  color: var(--black-color);
+  border-radius: 10px;
+  font-size: var(--size-content);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all .3s ease;
+}
+
+.editMember___btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Delete profile */
+.delete {
+  color: var(--red);
+  font-size: var(--size-small);
+  cursor: pointer;
+  text-decoration: none;
+}

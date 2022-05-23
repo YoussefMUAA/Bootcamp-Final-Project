@@ -1,0 +1,42 @@
+<div class="card___container mt-3">
+  <div class="upper___container">
+    <div class="image___container img-fluid">
+      <img [src]="myProfile.img_avatar ? rutaImg + myProfile.img_avatar : './../../../../assets/user.png'" />
+    </div>
+  </div>
+  <div class="lower___container">
+    <div class="card___text">
+      <div>
+        <h3>{{myProfile.name}}</h3>
+        <h4>{{myProfile.surname}}</h4>
+      </div>
+      <div>
+        <!-- email -->
+        <div class="container mt-3 mb-1">
+          <div class="row">
+            <div>
+              <p class="card___date">Email:</p>
+            </div>
+            <div>
+              <p>{{myProfile.email}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- working group -->
+      <div class="container">
+        <div class="row">
+          <div class="">
+            <p *ngIf="workingNames" class="card___date">working group:</p>
+          </div>
+          <div class="">
+            <div [innerText]=workingNames></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <a href="#" class="card___btn" [routerLink]="['/members', myProfile.id_user]">profile</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+/* estructura */
+.container___merchandising {
+  min-height: calc(100vh - 70px) !important;
+  display: flex;
+  align-items: center;
+}
+.container{
+  width: 60%;
+  background-color: var(--white-color);
+  box-shadow: 0 7px 10px 0 var(--shadow), 0 10px 30px 0 var(--shadow);
+  margin-bottom: 10vh;
+}
+
+/* Info */
+.merchandising h3 {
+  font-size: var(--size-title);
+  color: var(--primary-color);
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+.merchandising p {
+  font-size: var(--size-content);
+  color: var(--black-color);
+  line-height: 1.5rem;
+  margin: 5px;
+}
+
+/* form */
+.merchandising label, .merchandising i {
+  font-size: var(--size-content);
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.merchandising input {
+  width: 30%;
+  height: 2.5em;
+  border: none;
+  border-bottom: solid 2px var(--primary-color);
+  transition: all .3s ease;
+}
+
+.merchandising input:focus {
+  outline: none;
+  border-bottom: solid 2px var(--secondary-color) !important;
+}
+
+.merchandising input:focus {
+  outline: none;
+  border-bottom: solid 2px var(--secondary-color) !important;
+}
+
+.merchandising textarea {
+  width: 100%;
+  border: none;
+  border-bottom: solid 2px var(--primary-color);
+  transition: all .3s ease;
+}
+
+.merchandising textarea:focus {
+  outline: none;
+  border-bottom: solid 2px var(--secondary-color);
+}
+
+/* Button */
+.sendMerchandising___btn {
+  float: right;
+  padding: 10px 15px;
+  background: var(--primary-color);
+  border: none;
+  color: var(--white-color);
+  border-radius: 10px;
+  font-size: var(--size-content);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.sendMerchandising___btn:hover {
+  background: var(--secondary-color);
+}
+
+/* responsive */
+
+@media screen and (max-width:500px) {
+
+  .container {
+      width: 90% !important;
+    }
+
+  .merchandising input {
+    width: 70% !important;
+  }
+
+}
+
+@media screen and (max-width:1200px) {
+
+  .container {
+    width: 80%;
+  }
+
+  .merchandising input {
+    width: 45%;
+  }
+}

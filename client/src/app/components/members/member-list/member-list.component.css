@@ -1,0 +1,97 @@
+#editWG {
+  font-size: var(--size-content) !important;
+  position: relative;
+  left: 250px;
+  top: -37px;
+}
+
+#editWG:hover {
+  background-color: transparent !important;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.no-hidden {
+  display: default;
+}
+
+/* Modal */
+.modal___title {
+  color: var(--primary-color);
+  font-size: var(--size-subtitle);
+  margin-bottom: 2px;
+}
+
+.member___social-media {
+  color: var(--primary-color);
+  font-size: var(--size-subtitle);
+}
+
+.form-group label {
+    color: var(--primary-color);
+    font-size: var(--size-content);
+}
+
+.workingGroupCheckbox input {
+  font-size: var(--size-small);
+}
+
+/* Buttons */
+.filter___btn button, .select___btn {
+  padding: 7px 12px;
+  background: var(--white-color);
+  border: none;
+  color: var(--black-color);
+  border-radius: 10px;
+  font-size: var(--size-content);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all .3s ease;
+}
+
+
+.filter___btn button:hover {
+  background: var(--secondary-color);
+}
+
+.filter___btn a:hover {
+  background: var(--secondary-color);
+}
+
+.filter___search {
+  padding: 7px 12px;
+  border-radius: 10px;
+}
+
+/* Working groups */
+
+.title-wg {
+  font-size: var(--size-content) !important;
+}
+
+.returnAdd___btn {
+  color: var(--primary-color);
+  font-size: var(--size-small);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.returnAdd___btn:hover {
+  color: var(--secondary-color);
+  background-color: transparent !important;
+}
+
+.icons___wg {
+  color: var(--primary-color);
+  font-size: var(--size-content);
+  cursor: pointer;
+}
+
+.icons___wg:hover {
+  background: transparent !important;
+  color: var(--secondary-color);
+}

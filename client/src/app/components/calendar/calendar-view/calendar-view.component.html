@@ -1,0 +1,29 @@
+<!-- Optener fecha -->
+<div class="calendar___date mb-4">
+  {{dateValue | date}}
+</div>
+
+<!-- Calendar -->
+<div class="calendar">
+  <div class="header___calendar">
+    <div>
+      <a (click)="changeMonth(-1)" class="btn-prev">Previous</a>
+    </div>
+    <div class="">
+      <h2 class="calendar___day">{{dateSelect | date:'MMMM, yyyy'}}</h2>
+    </div>
+    <div>
+      <a (click)="changeMonth(1)" class="btn-next">Next</a>
+    </div>
+  </div>
+  <ol>
+    <!-- !TODO los días de la semana -->
+    <li *ngFor="let day of week" class="day___name mb-3">{{day | slice:0:3}}</li>
+
+    <li class="calendar___days" (click)="clickDay(day)" [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
+      *ngFor="let day of monthSelect;let first = first" [ngClass]="{select___days : day.hasEvent}">
+
+      <span>{{day?.value}}</span>
+    </li>
+  </ol>
+</div>

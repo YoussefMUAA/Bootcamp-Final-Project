@@ -1,0 +1,57 @@
+<div class="card card___container d-flex">
+  <div class="upper___container">
+  </div>
+  <div class="card-body lower___container">
+    <h5 class="pt-1 mb-3">{{event.name}}</h5>
+    <div class="">
+      <p class="time">{{event.date| date:'dd-MM-yyyy HH:mm'}}</p>
+    </div>
+    <div class="mt-2">
+      <p><span>Location:</span> {{event.location}}</p>
+    </div>
+    <div class="container mt-2">
+      <div>
+        <p class="card___date"><span>Description:</span> {{event.description}}</p>
+      </div>
+      <div class="d-flex mt-3">
+        <a appAdmin class="calendar___delete" (click)="deleteEvent(event.id_event)">Delete</a>
+        <a appAdmin class="ms-auto calendar___icon" data-bs-toggle="modal"
+          [attr.data-bs-target]="'#editEvent' + event.id_event"><i class="fa-solid fa-pen-to-square"></i></a>
+
+        <!-- TODO Edit Form -->
+        <div class="modal fade" [id]="'editEvent' + event.id_event" tabindex="-1" aria-labelledby="editEvent"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="editEvents">Edit event</h5>
+                <button type="button" class="btn-close d-flex align-items-center justify-content-center"
+                  data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+              </div>
+              <div class="modal-body">
+                <form [formGroup]="editEvent" (ngSubmit)="editEvents(event.id_event)">
+                  <div class="form-group mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                  </div>
+                  <div class="form-group mb-4">
+                    <label class="form-label">Location</label>
+                    <input type="text" class="form-control" formControlName="location">
+                  </div>
+                  <div appearance="fill" div class="form-group mb-4 d-flex">
+                    <input class="form-control" type="datetime-local" appearance="fill" formControlName="date">
+                  </div>
+                  <div class="form-group mb-3 d-flex">
+                    <div class="w-100"><textarea class="form-control" placeholder="description"
+                        formControlName="description"></textarea></div>
+                  </div>
+                  <button data-bs-dismiss="modal" type="submit" value="send" class="editEvent___btn btn">Edit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

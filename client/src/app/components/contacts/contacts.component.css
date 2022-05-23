@@ -1,0 +1,59 @@
+.filter___btn button {
+  padding: 7px 12px;
+  background: var(--white-color);
+  border: none;
+  color: var(--black-color);
+  border-radius: 10px;
+  font-size: var(--size-content);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all .3s ease;
+}
+
+.filter___btn button:hover {
+  background: var(--secondary-color);
+}
+
+.filter___search {
+  padding: 7px 12px;
+  border-radius: 10px;
+}
+
+/* Form */
+
+.form-group label {
+  color: var(--primary-color);
+  font-size: var(--size-content);
+}
+
+.modal-title {
+  color: var(--primary-color);
+  font-size: var(--size-subtitle);
+  margin-bottom: 2px;
+}
+
+.btn-close {
+  transition: all .3s ease;
+}
+
+.btn-close:hover {
+  background-color: var(--secondary-color);
+}
+
+.addContact___btn {
+  padding: 7px 12px;
+  background: var(--white-color);
+  border: none;
+  color: var(--black-color);
+  border-radius: 10px;
+  font-size: var(--size-content);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all .3s ease;
+}
+
+.addContact___btn:hover {
+  background-color: var(--secondary-color);
+}

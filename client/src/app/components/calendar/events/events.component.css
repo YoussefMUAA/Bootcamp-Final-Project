@@ -1,0 +1,99 @@
+.card___container {
+  width: 100%;
+  background: var(--white-color);
+  border-radius: 20px;
+  box-shadow: 0px 1px 10px 1px var(--shadow);
+  overflow: hidden;
+  display: flex; 
+  flex-direction: row;
+}
+
+.upper___container {
+  width: 5%;
+  background: var(--secondary-color);
+}
+
+.lower___container {
+  background: var(--white-color);
+  text-align: center;
+  padding: 1rem 5px !important;
+}
+
+/* title */
+.lower___container h5 {
+  box-sizing: border-box;
+  line-height: 1;
+  color: var(--primary-color);
+  font-size: var(--size-subtitle);
+  font-weight: 800 !important;
+}
+
+.lower___container p {
+  font-size: var(--size-content);
+  margin-bottom: 0.5rem;
+  color: var(--black-color);
+}
+
+.time {
+  font-style: italic;
+}
+
+span {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* btn */
+.calendar___delete {
+  color: var(--red) !important;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.calendar___delete:hover {
+  color: var(--secondary-color) !important;
+}
+
+.calendar___icon {
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.calendar___icon:hover {
+  color: var(--secondary-color) !important;
+}
+
+/* btn edit */
+
+.editEvent___btn {
+  padding: 7px 12px;
+  background: var(--white-color);
+  border: none;
+  color: var(--black-color);
+  border-radius: 10px;
+  font-size: var(--size-content);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all .3s ease;
+}
+
+.editEvent___btn:hover {
+  background: var(--secondary-color);
+}
+
+.form-group label {
+  color: var(--primary-color);
+  font-size: var(--size-content);
+  text-align: start;
+  display: block;
+}
+
+.btn-close:hover {
+  color: var(--black-color) !important;
+  background: var(--secondary-color);
+}
+

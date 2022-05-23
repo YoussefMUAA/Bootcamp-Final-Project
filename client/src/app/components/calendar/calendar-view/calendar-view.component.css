@@ -1,0 +1,138 @@
+.calendar {
+  margin: 1rem;
+  border: solid 1px var(--shadow);
+  box-shadow: 0 0 8px var(--shadow);
+}
+
+div {
+  text-align: center;
+  max-width: 1200px;
+}
+
+ol {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin: 0;
+  padding: 0;
+}
+
+/* Btn de los días */
+.calendar___days {
+  position: relative;
+  padding: .90rem .30rem ;
+  font-size: var(--size-title);
+  cursor: pointer;
+  margin-bottom: 10px;
+  z-index: 2;
+}
+
+.calendar___days span {
+  transition: all 0.3s;
+}
+
+.calendar___days span:hover {
+  color: var(--white-color);
+}
+
+.select___days span:before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  z-index: -1;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+}
+
+/* Día en el que empieza */
+.first-day {
+  grid-column-start: var(--first-day-start, 0);
+}
+
+.day___name {
+  background: var(--white-color);
+  font-weight: bold;
+  font-size: var(--size-content);
+  margin-bottom: 2px;
+  padding: 4px;
+  text-align: center;
+}
+
+.header___calendar {
+  padding: 0px 12px;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+
+.header___calendar h2 {
+  width: 100%;
+  font-size: var(--size-content);
+  color: var(--white-color);;
+}
+
+.header___calendar a {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--white-color);
+  font-size: var(--size-content);
+  text-decoration: none;
+  z-index: 1;
+}
+
+.header___calendar a::after {
+  content: ' ';
+  position: absolute;
+  display: block;
+  top: 20px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--secondary-color);
+  width: 0px;
+  height: 3px;
+  bottom: 0;
+  transition: all 0.3s;
+}
+
+.header___calendar a:hover::after {
+  width: 100%;
+}
+
+.calendar___date {
+  font-size: var(--size-title);
+  color: var(--white-color);
+}
+
+.calendar___date span {
+  text-transform: uppercase;
+}
+
+/* Responsive */
+
+@media screen and (max-width:500px) {
+
+  .calendar {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  li {
+    font-size: var(--small) !important;
+  }
+
+  .select___days span:before {
+    width: 30px;
+    height: 30px;
+  }
+}

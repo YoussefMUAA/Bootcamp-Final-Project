@@ -1,0 +1,198 @@
+<nav class="navbar m-2 m-m-md-5 filter___btn">
+  <div class="container-fluid">
+    <div class="d-flex flex-wrap align-items-center">
+      <!-- TODO Select Working Groups -->
+      <select class="select___btn" (change)="group($event)">
+        <option value="">Working Group</option>
+        <option *ngFor="let myWorkingGroup of myWorkingGroups" [value]="myWorkingGroup.id_working_group">
+          {{myWorkingGroup.working_group_name}}</option>
+      </select>
+      <!-- TODO Add Member -->
+      <div class="mx-2">
+        <button appAdmin type="button" class="btn my-2" data-bs-toggle="modal" data-bs-target="#addMember">Add
+          Member
+        </button>
+      </div>
+      <!-- modal -->
+      <div class="modal fade" id="addMember" tabindex="-1" aria-labelledby="addMember" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal___title">Add Member</h5>
+              <button type="button" class="btn-close d-flex align-items-center justify-content-center"
+                data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="formNewMember" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" class="form-control" formControlName="name">
+                  <p *ngIf="checkControl('name', 'required')" class="text-danger mt-1 small">The name must be defined.
+                  </p>
+                </div>
+                <div class="form-group">
+                  <label class="mt-3">Surname</label>
+                  <input type="text" class="form-control" formControlName="surname">
+                </div>
+                <div class="form-group">
+                  <label class="mt-3">Email</label>
+                  <input type="text" class="form-control" formControlName="email">
+                  <p *ngIf="checkControl('email', 'required')" class="text-danger mt-1 small">The email must be defined.
+                  </p>
+                  <p *ngIf="checkControl('email', 'pattern')" class="text-danger mt-1 small">The email is not in to
+                    correct format.</p>
+                </div>
+                <div class="form-group">
+                  <label class="mt-3">Profile Image</label>
+                  <input type="file" class="form-control" name="img_avatar" (change)="onChange($event)">
+                </div>
+                <div class="form-group">
+                  <label class="mt-3">Phone number</label>
+                  <input type="text" class="form-control" formControlName="phone_number">
+                </div>
+                <div class="form-group">
+                  <!-- Array WG -->
+                  <label class="mt-4 mb-2">Working Groups</label>
+                  <div class="workingGroupCheckbox" *ngFor="let myWorkingGroup of myWorkingGroups">
+                    <ng-container>
+                      <input class="mb-2" type="checkbox" [value]="myWorkingGroup.id_working_group"
+                        formArrayName="working_groups" (change)="onCheckbox($event)">
+                      {{myWorkingGroup.working_group_name}}
+                    </ng-container>
+                  </div>
+                  <!--  -->
+                </div>
+                <div class="form-group">
+                  <label class="mt-3">Address</label>
+                  <input type="text" class="form-control" formControlName="address">
+                </div>
+                <div class="form-group">
+                  <label class="mt-3">Location</label>
+                  <input type="text" class="form-control" formControlName="location">
+                </div>
+                <div class="form-group">
+                  <label class="mt-3">Admin</label>
+                  <select formControlName="is_admin" class="form-control">
+                    <option value="0">User</option>
+                    <option value="1">Admin</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="mt-3">Password</label>
+                  <input type="password" class="form-control" formControlName="password">
+                  <p *ngIf="checkControl('password', 'required')" class="text-danger mt-1 small">The password must be
+                    defined.
+                  </p>
+                  <p *ngIf="checkControl('password', 'minlength')" class="text-danger mt-1 small">The password must be
+                    contain
+                    between 8 and 20 characters.</p>
+                  <p *ngIf="checkControl('password', 'maxlength')" class="text-danger mt-1 small">The password must be
+                    contain
+                    between 8 and 20 characters.</p>
+                </div>
+                <div class="form-group">
+                  <label class="mt-3">Repeat Password</label>
+                  <input type="password" class="form-control" formControlName="repeatpass">
+                  <p *ngIf="formNewMember.hasError('passcompare') && touchedReset('repeatpass')"
+                    class="text-danger mt-1 small">The password doesn't match.</p>
+                </div>
+                <h4 class="member___social-media mt-4">Social media</h4>
+                <div class="form-group">
+                  <label class="mt-3">Instragram</label>
+                  <input type="text" class="form-control" formControlName="rs_instagram">
+                </div>
+                <div class="form-group">
+                  <label class="mt-3">Linkedin</label>
+                  <input type="text" class="form-control" formControlName="rs_linkedin">
+                </div>
+                <div class="form-group">
+                  <label class="mt-3">Facebook</label>
+                  <input type="text" class="form-control" formControlName="rs_facebook">
+                </div>
+                <div class="form-group">
+                  <label class="mt-3">Twitter</label>
+                  <input type="text" class="form-control" formControlName="rs_twitter">
+                </div>
+                <div class="modal-footer">
+                  <button data-bs-toggle="modal" type="submit" value="send" class="addMember___btn btn mt-3"
+                    [disabled]="!formNewMember.valid">Add
+                    Member</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- TODO Manage Working Group -->
+      <div>
+        <button appAdmin type="button" class="btn my-2" data-bs-toggle="modal" data-bs-target="#manageGroup">
+          Manage Working Group
+        </button>
+      </div>
+
+      <!-- Modal Working Group -->
+      <div class="modal fade" id="manageGroup" tabindex="-1" aria-labelledby="manageGroup" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal___title" id="exampleModalLabel">Manage Working Group</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                  class="fa-solid fa-x"></i></button>
+            </div>
+            <div class="modal-body">
+              <!-- ADD Wowking Group -->
+              <h4 class="mb-2 title-wg">{{ btn_wg == true ? 'New Working Group' : 'Edit Working Group' }}</h4>
+              <form [formGroup]="formNewWorkingGroup" (ngSubmit)="registerGroup(formNewWorkingGroup)">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" class="form-control" formControlName="working_group_name" [ngModel]="">
+                  <p *ngIf="checkControl('name', 'required')" class="text-danger">El campo es obligatorio</p>
+                </div>
+                <!-- Botones ADD / EDIT -->
+                <div *ngIf="btn_wg == false ? true : false" (click)="btnAdd()" class="mb-1">
+                  <a type="submit" value="send" class="returnAdd___btn">
+                    Add New Working Group
+                  </a>
+                </div>
+                <div *ngIf="btn_wg; else btn_edit" class="modal-footer mb-3">
+                  <button type="submit" value="send" class="addMember___btn btn" data-bs-toggle="modal">
+                    Add
+                  </button>
+                </div>
+                <ng-template #btn_edit>
+                  <div class="modal-footer mb-3">
+                    <button type="submit" value="send" class="addMember___btn btn" data-bs-toggle="modal">
+                      Edit
+                    </button>
+                  </div>
+                </ng-template>
+              </form>
+              <div class="d-flex" *ngFor="let myWorkingGroup of myWorkingGroups">
+                <p class="me-auto">{{myWorkingGroup.working_group_name}}</p>
+                <a (click)="btnChange(myWorkingGroup?.id_working_group)" class="icons___wg"><i
+                    class="fa-solid fa-pencil mx-2"></i></a>
+                <a (click)="deleteWorkingGroup(myWorkingGroup?.id_working_group)" data-bs-toggle="modal"
+                  class="icons___wg"><i class="fa-solid fa-trash-can mx-2"></i></a>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="profile___btn btn" data-bs-toggle="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TODO Filter members -->
+    </div>
+    <form class="d-flex filter___search">
+      <input class="form-control me-2" name="name" type="search" placeholder="Search" aria-label="Search"
+        [(ngModel)]="filterMembers">
+    </form>
+  </div>
+</nav>
+
+<div class="members___container row justify-content-center w-100">
+  <article *ngFor="let member of members | filterMembers: filterMembers" class="col-auto m-2">
+    <app-member-card [myProfile]="member" [myWorkingGroup]="myWorkingGroups"></app-member-card>
+  </article>
+</div>

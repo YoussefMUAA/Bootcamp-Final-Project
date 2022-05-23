@@ -1,0 +1,127 @@
+<div *ngIf="myProfile !==undefined">
+  <div class="profile___container mt-3 mt-md-0 mx-3 pb-md-5">
+    <div class="profile container card my-4 my-md-0 pt-2">
+      <div class="row m-3 mt-3">
+        <div class="col-12 col-md-4 d-flex align-items-center p-0">
+          <img [src]="myProfile.img_avatar ? rutaImg + myProfile.img_avatar : './../../../../assets/user.png'"
+            class="img-fluid mb-3 mb-md-0 rounded img_profile p-0 p-md-3" alt="...">
+        </div>
+        <div class="col-12 col-md-8 ">
+          <div class="card___body">
+            <div class="bubble">
+              <p>Hello</p>
+            </div>
+            <div class="container card___title mt-4 pb-2">
+              <div class="row">
+                <h2 class="profile___name align-self-center col-lg-9 col-xl-10">{{myProfile.name}} {{myProfile.surname}}
+                </h2>
+                <div *ngIf="myProfile.is_admin === 1"
+                  class="profile___admin text-danger align-self-center col-lg-3 col-xl-2">
+                  <h4>Admin <i class="fa-solid fa-screwdriver-wrench"></i></h4>
+                </div>
+              </div>
+            </div>
+            <div class="container mb-2 mb-md-3">
+              <div class="profile___info row mt-4 align-items-center">
+                <div class="profile___info___date col-12 col-md-4 col-xl-3">
+                  <p class="mb-0">e-mail</p>
+                </div>
+                <div class="profile___info___user col-12 col-md-8 col-xl-9">
+                  <p>{{myProfile.email}}</p>
+                </div>
+              </div>
+            </div>
+            <!-- phone -->
+            <div class="container mb-2 mb-md-3">
+              <div class="profile___info row align-items-center">
+                <div class="profile___info___date col-sm-12 col-md-4 col-xl-3">
+                  <p class="mb-0">phone</p>
+                </div>
+                <div class="profile___info___user col-sm-12 col-md-8 col-xl-9">
+                  <p>{{myProfile.phone_number}}</p>
+                </div>
+              </div>
+            </div>
+            <!-- working group -->
+            <div class="container mb-2 mb-md-3">
+              <div class="profile___info row align-items-center">
+                <div class="profile___info___date col-sm-12 col-md-4 col-xl-3">
+                  <p class="mb-0">working group</p>
+                </div>
+                <div class="profile___info___user col-sm-12 col-md-8 col-xl-9">
+                  <div class="d-flex">
+                    <p [innerText]=workingNames></p>
+                    <!-- TODO My Working Groups Edit -->
+                    <a *ngIf="router.url === '/profile' || payload.is_admin === 1" type="button" data-bs-toggle="modal"
+                      data-bs-target="#editMyWG">
+                      <i class="fa-solid fa-pen-to-square mx-4"></i>
+                    </a>
+                  </div>
+                  <app-edit-groups [myWorkingGroups]="allWorkignGroup" [myProfile]="myProfile"
+                    [workingNames]="workingNames" (onRefreshWG)="onRefreshWG()"></app-edit-groups>
+                </div>
+              </div>
+            </div>
+            <!-- postal adress -->
+            <div class="container mb-2 mb-md-3">
+              <div class="profile___info row align-items-center">
+                <div class="profile___info___date col-sm-12 col-md-4 col-xl-3">
+                  <p class="mb-0">Postal Adress</p>
+                </div>
+                <div class="profile___info___user col-sm-12 col-md-8 col-xl-9">
+                  <p>{{myProfile.address}}</p>
+                </div>
+              </div>
+            </div>
+            <!-- Current Location -->
+            <div class="container mb-2 mb-md-3">
+              <div class="profile___info row align-items-center">
+                <div class="profile___info___date col-sm-12 col-md-4 col-xl-3">
+                  <p class="mb-0">current location</p>
+                </div>
+                <div class="profile___info___user col-sm-12 col-md-8 col-xl-9">
+                  <p>{{myProfile.location}}</p>
+                </div>
+              </div>
+              <!-- Edit -->
+              <div class="d-flex mt-3 gap-2 align-items-center">
+                <button *ngIf="router.url === '/profile' || payload.is_admin === 1" type="button"
+                  class="profile___btn btn my-2" data-bs-toggle="modal" data-bs-target="#editProfile">
+                  Edit Profile
+                </button>
+                <app-profile-edit [myProfile]="myProfile" (refreshProfile)="onRefreshProfile()"></app-profile-edit>
+                <!-- Message -->
+                <a *ngIf="router.url !== '/profile'" href="mailto:{{myProfile.email}}" target="_blank"
+                  class="profile___btn btn  my-2" type="button">Send message</a>
+                <!-- Password -->
+                <a *ngIf="router.url === '/profile' || payload.is_admin === 1" type="button" data-bs-toggle="modal"
+                  data-bs-target="#editPassword">
+                  <i class="fa-solid fa-key password"></i>
+                </a>
+                <app-password [myProfile]="myProfile"></app-password>
+                <!-- Logout -->
+                <button (click)="logout()" *ngIf="router.url === '/profile'" type="button"
+                  class="profile___btn btn my-2 ms-auto logout">
+                  Logout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- icons social -->
+      <div class="profile___icons">
+        <div class="profile___social d-flex justify-content-center box-icon-wrap box-icon-effect-1 box-icon-effect-1a">
+          <a *ngIf="myProfile.rs_linkedin" [href]="myProfile.rs_linkedin"
+            class="profile___icon fa-brands fa-linkedin m-3" target="_blank"></a>
+          <a *ngIf="myProfile.rs_twitter" [href]="myProfile.rs_twitter" class="profile___icon fa-brands fa-twitter m-3"
+            target="_blank"></a>
+          <a *ngIf="myProfile.rs_instagram" [href]="myProfile.rs_instagram"
+            class="profile___icon fa-brands fa-instagram m-3" target="_blank"></a>
+          <a *ngIf="myProfile.rs_facebook" [href]="myProfile.rs_facebook"
+            class="profile___icon fa-brands fa-facebook m-3" target="_blank"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

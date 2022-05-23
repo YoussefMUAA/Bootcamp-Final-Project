@@ -1,0 +1,173 @@
+.card___container {
+  width: 300px;
+  margin: 10px;
+  background: var(--white-color);
+  border-radius: 20px;
+  box-shadow: 0px 1px 10px 1px var(--shadow);
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upper___container {
+  height: 50px;
+  background: var(--secondary-color);
+}
+
+/* Cabecera card */
+.document___icon {
+  text-align: center;
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: var(--size-title);
+}
+
+.image___container {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  padding: 5px;
+  transform: translate(100px, 10px);
+}
+
+.image___container i {
+  transform: translate(0px, 5px);
+}
+
+/* Height card */
+.lower___container {
+  background: var(--white-color);
+  height: 340px;
+  word-break: break-all;
+  padding-top: 55px;
+  text-align: center;
+}
+
+.lower___container h5 {
+  font-size: var(--size-subtitle);
+  box-sizing: border-box;
+  line-height: 1;
+  color: var(--primary-color);
+  font-weight: bold;
+  word-break: break-word;
+}
+
+.lower___container p {
+  font-size: var(--size-content);
+  margin-bottom: 0.5rem;
+  color: var(--black-color);
+  word-break: break-word;
+}
+
+.card___date {
+  color: var(--primary-color) !important;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.card___btn {
+  padding: 5px 15px;
+  background: var(--primary-color);
+  border: none;
+  color: var(--white-color);
+  border-radius: 30px;
+  font-size: var(--size-content);
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all .3s ease-in;
+}
+
+.card___btn:hover {
+  background: var(--secondary-color);
+}
+
+/* Form Edit */
+.form-group label {
+  color: var(--primary-color);
+  font-size: var(--size-content);
+}
+
+.modal-title {
+  color: var(--primary-color);
+  font-size: var(--size-subtitle);
+  margin-bottom: 2px;
+}
+
+.btn-close {
+  transition: all .3s ease;
+}
+
+.btn-close:hover {
+  background-color: var(--secondary-color);
+}
+
+.addDocument___btn {
+  padding: 7px 12px;
+  background: var(--white-color);
+  border: none;
+  color: var(--black-color);
+  border-radius: 10px;
+  font-size: var(--size-content);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all .3s ease;
+}
+
+.addDocument___btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Admin */
+
+.document___delete {
+  color: var(--red) !important;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.document___delete:hover {
+  color: var(--secondary-color) !important;
+}
+
+.document_private {
+  color: var(--red) !important;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+.document___iconEdit {
+  font-size: var(--size-content);
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.document___iconEdit:hover {
+  color: var(--secondary-color);
+}
+
+/* btn modal pdf */
+
+.btn___pdf {
+  padding: 10px 15px;
+  background: var(--primary-color);
+  border: none;
+  color: var(--white-color);
+  border-radius: 20px;
+  font-size: var(--size-content);
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all .3s ease-in;
+}
+
+.btn___pdf:hover {
+  background: var(--secondary-color);
+}

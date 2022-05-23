@@ -1,0 +1,42 @@
+<div class="container___merchandising pt-3">
+  <div class="container rounded">
+    <div class="row px-md-5 p-2 p-md-4">
+      <div class="merchandising p-3">
+        <div class="messandising___info mb-4">
+          <!-- Edit message -->
+          <!-- title -->
+          <h3>Place your order</h3>
+          <!-- content -->
+          <p>Send us a message with the merchandising articles and quantity you need.</p>
+          <p>The following products are currently available: Notebook, Pen, Pouch, Cards, Roll-up.</p>
+        </div>
+        <form [formGroup]="formMerchandising" (ngSubmit)="sendEmail()">
+          <div class="form-group mb-3">
+            <label class="mb-1 col-12 mb-2 mt-2">
+              <i class="far fa-user me-2"></i>Your Name
+            </label>
+            <input type="text" placeholder="Name" formControlName="name">
+            <p *ngIf="checkControl('name', 'required')" class="text-danger mt-1 small">You need to add a name.</p>
+          </div>
+          <div class="form-group mb-3">
+            <label class="mb-1 col-12 mb-2 mt-2">
+              <i class="far fa-envelope me-2"></i>Your Email
+            </label>
+            <input type="text" placeholder="Email" formControlName="email">
+            <p *ngIf="checkControl('email', 'required')" class="text-danger mt-1 small">You need to add a email.</p>
+          </div>
+          <div class="form-group mb-4">
+            <label class="mb-1 col-12 mb-2 mt-2">
+              <i class="far fa-edit me-2"></i>Your Message
+            </label>
+            <textarea id="merchandisingMessage" placeholder="Type your message here" formControlName="message"
+              rows="3"></textarea>
+            <p *ngIf="checkControl('doc_title', 'required')" class="text-danger mt-1 small">Add a message.</p>
+          </div>
+          <button class="sendMerchandising___btn mt-2" type="submit" [disabled]="!formMerchandising.valid">Send
+            Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

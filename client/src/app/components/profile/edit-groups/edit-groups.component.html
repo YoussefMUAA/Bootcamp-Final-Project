@@ -1,0 +1,26 @@
+<div class="modal fade" id="editMyWG" tabindex="-1" aria-labelledby="editMyWG" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal___title" id="editMyWG">Edit Working Group</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="editMyWGForm" (ngSubmit)="editMyWG()">
+          <div class="form-group">
+            <div class="workingGroupCheckbox mb-2" *ngFor="let myWorkingGroup of myWorkingGroups">
+              <ng-container>
+                <input class="mb-2" type="checkbox" [checked]="checkWorkingGroup(myWorkingGroup.working_group_name)"
+                  [value]="myWorkingGroup.id_working_group" formArrayName="working_groups"
+                  (change)="onCheckbox($event)"> {{myWorkingGroup.working_group_name}}
+              </ng-container>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button data-bs-dismiss="modal" type="submit" value="send" class="editMember___btn btn mt-3">Edit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

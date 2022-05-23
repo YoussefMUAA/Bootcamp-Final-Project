@@ -1,0 +1,55 @@
+<div class="row m-4 pt-5">
+  <div class="col-12 col-md-12 col-lg-5 col-xl-4 order-2 order-lg-1 mt-5 mt-lg-0">
+    <div class="d-flex align-items-center mb-4">
+      <p class="title">Events</p>
+      <button class="addEvent ms-auto" (click)="onRefreshEvents()">Refresh Events</button>
+    </div>
+
+    <!-- open accordion -->
+    <mat-accordion class="example-headers-align" multi>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header class="d-flex">
+          <mat-panel-title class="me-auto"> Add Event </mat-panel-title>
+          <mat-icon class="mx-3">date_range</mat-icon>
+        </mat-expansion-panel-header>
+        <!-- Contenido -->
+        <form [formGroup]="eventsForm" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="fill" class="mx-2">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" required>
+            <p *ngIf="checkControl('name', 'required')" class="text-danger mt-1 small">The name must be defined.
+            </p>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="mx-2">
+            <mat-label>Location</mat-label>
+            <input matInput formControlName="location" required>
+            <p *ngIf="checkControl('location', 'required')" class="text-danger mt-1 small">The location must be defined.
+            </p>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="mx-2">
+            <mat-label>Date</mat-label>
+            <input matInput type="datetime-local" ppearance="fill" formControlName="date" required>
+            <p *ngIf="checkControl('date', 'required')" class="text-danger mt-1 small">The date must be defined.
+            </p>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="mx-2">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+          </mat-form-field>
+          <button mat-raised-button type="submit">Send</button>
+        </form>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <!-- close accordion -->
+
+
+    <article *ngFor="let event of eventsFiltered" class="mb-3 mt-3">
+      <app-events [event]="event" (refreshEvents)="onRefreshEvents()"></app-events>
+    </article>
+  </div>
+
+  <div class="col-12 col-md-12 col-lg-7 col-xl-8 order-1 order-lg-2">
+    <app-calendar-view [events]="eventsFiltered" (dateSelected)="onDateSelected($event)">
+    </app-calendar-view>
+  </div>
+</div>

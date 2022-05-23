@@ -1,0 +1,88 @@
+.card___container {
+  width: 300px;
+  height: 450px;
+  background: var(--white-color);
+  border-radius: 20px;
+  box-shadow: 0px 1px 10px 1px var(--shadow);
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upper___container {
+  height: 100px;
+  background: var(--secondary-color);
+}
+
+.image___container {
+  background: var(--white-color);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  padding: 5px;
+  transform: translate(100px, 50px);
+}
+
+.image___container img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  
+}
+
+.card___text {
+  height: 246px;
+
+}
+
+.lower___container {
+  background: var(--white-color);
+  word-break: break-word;
+  padding-top: 55px;
+  text-align: center;
+}
+
+.lower___container h3,
+h4 {
+  font-size: var(--size-subtitle);
+  text-transform: uppercase;
+  box-sizing: border-box;
+  line-height: .9;
+}
+
+.lower___container h4 {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.lower___container p {
+  font-size: var(--size-content);
+  margin-bottom: 0.5rem;
+  color: var(--black-color);
+}
+
+.card___date {
+  color: var(--primary-color) !important;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.card___btn {
+  padding: 10px 15px;
+  background: var(--primary-color);
+  border: none;
+  color: var(--white-color);
+  border-radius: 30px;
+  font-size: var(--size-content);
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all .3s ease-in;
+}
+
+.card___btn:hover {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}

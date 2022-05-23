@@ -1,0 +1,43 @@
+<nav *ngIf="isLogin" class="navbar navbar-expand-lg navbar-light d-flex align-items-center mx-4">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand">
+      <img src="../../../assets/HORIZONTAL WHITE GWLVOICES LOGO @288x-100.png" class="img-fluid" alt="" width="" />
+    </a>
+
+    <!-- Responsive -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav p-2 p-lg-0 rounded-3 border">
+        <li class="nav-item mx-3 mx-lg-1 mx-xl-3 mx-xxl-4">
+          <a class="nav-link text-white active" routerLink="/profile" routerLinkActive="active">My
+            Profile</a>
+        </li>
+        <li class="nav-item mx-3 mx-lg-1 mx-xl-3 mx-xxl-4">
+          <a class="nav-link text-white" routerLink="/members" routerLinkActive="active">Members</a>
+        </li>
+        <li class="nav-item mx-3 mx-lg-1 mx-xl-3 mx-xxl-4">
+          <a class="nav-link text-white" routerLink="/contacts" routerLinkActive="active">Contacts</a>
+        </li>
+        <li class="nav-item mx-3 mx-lg-1 mx-xl-3 mx-xxl-4">
+          <a class="nav-link text-white" routerLink="/documents" routerLinkActive="active">Documents</a>
+        </li>
+        <li class="nav-item mx-3 mx-lg-1 mx-xl-3 mx-xxl-4">
+          <a class="nav-link text-white" routerLink="/calendar" routerLinkActive="active">Calendar</a>
+        </li>
+        <li class="nav-item ms-3 mx-lg-1 mx-xl-3 mx-xxl-4">
+          <a class="nav-link text-white" routerLink="/merchandising" routerLinkActive="active">Merchandising</a>
+        </li>
+        <!-- <div class="logged d-flex align-items-center">
+          <h4 class="m-0">{{YourName}} </h4>
+          <i class="fa-solid fa-user ms-2"></i>
+        </div> -->
+      </ul>
+    </div>
+  </div>
+</nav>

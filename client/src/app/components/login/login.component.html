@@ -1,0 +1,29 @@
+<div class="login">
+  <div class="container login___container">
+    <div class="row background___login rounded">
+      <div class="col-md-6 login-form-1">
+        <div class="row">
+          <img src="./../../../assets/mainImage.png" class="img-fluid" alt="" />
+        </div>
+        <div class="row">
+          <img src="" alt="" />
+        </div>
+      </div>
+      <div class="col-md-6 login-form-2">
+        <form #loginForm="ngForm" (ngSubmit)="getDataLogin(loginForm)">
+          <h3 class="mb-5">Welcome</h3>
+          <div class="form-group mb-3">
+            <input type="text" name="email" class="form-control" placeholder="Your Email..." ngModel />
+          </div>
+          <div class="form-group my-3">
+            <input type="password" name="password" class="form-control" placeholder="Your Password..." value="password"
+              ngModel />
+          </div>
+          <div class="form-group mt-5">
+            <input type="submit" class="btnSubmit" value="Login" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
