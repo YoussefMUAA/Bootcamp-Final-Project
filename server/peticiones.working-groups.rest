@@ -1,0 +1,36 @@
+###WORKING-GROUPS###
+
+GET http://localhost:3000/api/working-groups
+
+###
+GET http://localhost:3000/api/working-groups/allOff
+
+
+###
+GET http://localhost:3000/api/working-groups/2
+
+###
+GET http://localhost:3000/api/working-groups/getGroupByUser/1061
+
+###
+POST http://localhost:3000/api/working-groups
+Content-Type: application/json
+
+{
+  "working_group_name": "Climate fight"
+}
+
+###
+PUT http://localhost:3000/api/working-groups/1
+Content-Type: application/json
+
+{
+  "working_group_name": "Antonias furiosas"
+}
+
+###
+DELETE http://localhost:3000/api/working-groups/10
+
+###
+POST http://localhost:3000/api/working-groups/unionGroupsAdmin/10/106
+

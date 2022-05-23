@@ -1,0 +1,37 @@
+###EVENTS###
+
+GET http://localhost:3000/api/events
+
+
+###
+GET http://localhost:3000/api/events/1
+
+
+###
+POST http://localhost:3000/api/events
+Content-Type: application/json
+
+{
+  "name": "Save the",
+  "description": "Congreso para defender a las sardinas oprimidas",
+  "date": "2022-04-20",
+  "location": 51.7942,
+
+
+}
+
+###
+PUT http://localhost:3000/api/events/1
+Content-Type: application/json
+
+{
+  "name": "Save",
+  "description": "Congreso para defender a las sardinas oprimidas",
+  "date": "2022-05-20",
+  "location": 51.7942,
+  "time": "08:03:02"
+
+}
+
+###
+DELETE http://localhost:3000/api/events/102

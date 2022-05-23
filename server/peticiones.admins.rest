@@ -1,0 +1,29 @@
+####ADMINS API###
+GET http://localhost:3000/api/admins/All
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjo0LCJlbWFpbCI6ImRsYW5naG9ybjNAZ29vZ2xlLmNvLmpwIiwiaXNfYWRtaW4iOiJ0cnVlIiwiaWF0IjoxNjUyMTI5MjY1LCJleHAiOjE2NTI2NDc2NjV9.YD8uuS10vbmZWgJYwpEfWJiZMbd2opyy2P_u4tFfiWA
+
+###
+DELETE http://localhost:3000/api/admins/24
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDAxLCJlbWFpbCI6ImFubi5wZXJmaWR5QGhvdG1haWwuY29tIiwiaXNfYWRtaW4iOiJ0cnVlIiwiaWF0IjoxNjUyMjE4ODM1LCJleHAiOjE2NTI3MzcyMzV9.zhv5z-UcJ0eZvi1ThBN6Lie9VnjhTBxFquE77cq2Fd4 
+
+###
+POST http://localhost:3000/api/admins/register
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDAxLCJlbWFpbCI6ImFubi5wZXJmaWR5QGhvdG1haWwuY29tIiwiaXNfYWRtaW4iOiJ0cnVlIiwiaWF0IjoxNjUyMjE4ODM1LCJleHAiOjE2NTI3MzcyMzV9.zhv5z-UcJ0eZvi1ThBN6Lie9VnjhTBxFquE77cq2Fd4
+Content-Type: application/json
+
+{
+    "name":"Name",
+    "surname":"Surname",
+    "email" : "prueba@hotmail.com",
+    "password":"12345679",
+    "img_avatar":"public/images/user_default_img.png",
+    "phone_number":345655,
+    "address":"calle prueba prueba",
+    "location":"nosdddfe",
+    "is_admin" :"true",
+    "rs_instagram":"www.instragram.com",
+    "rs_linkedin":"www.linkedin.com",
+    "rs_twitter":"www.twitter.com",
+    "rs_facebook":"www.facebook.com"
+    
+}

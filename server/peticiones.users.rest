@@ -1,0 +1,60 @@
+###
+####API USERS######
+###
+GET  http://localhost:3000/api/users/All
+###
+
+###
+GET http://localhost:3000/api/users/10
+
+
+###LOGIN  //POR AHORA ESTA EN USERS LOGIN
+
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "email":"prueba@hotmail.com", 
+    "password":"123456789"
+}
+###perfil del suuario logeado que te devuelve al logearte
+###
+GET http://localhost:3000/api/users/profile
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDM5LCJlbWFpbCI6ImFubi5wZXJmaWR5QGhvdG1haWwuY29tIiwiaXNfYWRtaW4iOiJ0cnVlIiwiaWF0IjoxNjUxNzQ4NDkyLCJleHAiOjE2NTIyNjY4OTJ9.wsaUm3or5PTByzJBgPaf0MFKiCFycYie5SA-jVrkQrM
+
+
+//el uaurio se actualiza
+###
+PUT http://localhost:3000/api/users/1045
+Content-Type: application/json
+
+{
+    "name":"Anna",
+    "surname":"Ledesma",
+    "password":"123456789",
+    "email" :"prueba@hotmail.com",
+    "img_avatar":"",
+    "phone_number":123456789,
+    "address":"calle prueba",
+    "location":"Denver, Colorado",
+    "is_admin" :"true",
+    "rs_instagram":"www.instragram.com",
+    "rs_linkedin":"www.linkedin.com",
+    "rs_twitter":"www.twitter.com",
+    "rs_facebook":"www.facebook.com"
+}
+
+
+
+###
+POST http://localhost:3000/api/users/upload
+
+
+
+##############WORKING GROUPS############
+
+###
+GET http://localhost:3000/api/working-groups/getUsersByGroup/3
+
+###
+GET http://localhost:3000/api/working-groups/getGroupByUser/10

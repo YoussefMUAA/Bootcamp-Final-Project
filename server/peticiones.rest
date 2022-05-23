@@ -1,0 +1,139 @@
+###
+####API USERS######
+###
+GET  http://localhost:3000/api/users/All
+###
+
+//el uaurio se actualiza
+###
+PUT http://localhost:3000/api/users/1035
+Content-Type: application/json
+
+{
+    "name":"Anna",
+    "surname":"Ledesma",
+    "password":"123456789",
+    "email" :"ann.perfidy@hotmail.com",
+    "img_avatar":"",
+    "phone_number":123456789,
+    "address":"calle mierda",
+    "location":"FREGH",
+    "is_admin" :true,
+    "rs_instagram":"www.instragram.com",
+    "rs_linkedin":"www.linkedin.com",
+    "rs_twitter":"www.twitter.com",
+    "rs_facebook":"www.facebook.com"
+    "users_id_user":1035,
+    "working_groups_id_working_group":3
+    
+    
+}
+###
+
+
+
+####ADMINS API###
+GET http://localhost:3000/api/admins/All
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDE1LCJlbWFpbCI6IjNVU1VBUklPQGxvby5jb20iLCJpYXQiOjE2NTE0OTYxNTMsImV4cCI6MTY1MjAxNDU1M30.oAYo8X7yLN1w_rnA1-p4YkMobyp-NcMESKPgVGHRnjo
+
+###
+POST http://localhost:3000/api/admins/register
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDYxLCJlbWFpbCI6ImFubi5wZXJmaWR5QGhvdG1haWwuY29tIiwiaXNfYWRtaW4iOjEsImlhdCI6MTY1MTk0MjU3MCwiZXhwIjoxNjUyNDYwOTcwfQ.6OTyqcTxrb2PKGHwGpZ2S5ekga4AD5teVQSq_GsQtIM
+Content-Type: application/json
+
+{
+    "name":"MORGANA",
+    "surname":"Ledesma",
+    "email" :"ahuhkn@hotmail.com",
+    "password":"123456789",
+    "img_avatar":"",
+    "phone_number":123456789,
+    "address":"calle mierda",
+    "location":"nosdddfe",
+    "is_admin" :0,
+    "rs_instagram":"www.instragram.com",
+    "rs_linkedin":"www.linkedin.com",
+    "rs_twitter":"www.twitter.com",
+    "rs_facebook":"www.facebook.com"
+    "working_groups":[10,4]
+}
+
+
+
+###LOGIN  //POR AHORA ESTA EN USERS LOGIN
+
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "email":"ann.perfidy@hotmail.com", 
+    "password":"123456789"
+}
+###perfil del suuario logeado que te devuelve al logearte
+###
+GET http://localhost:3000/api/users/profile
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDYxLCJlbWFpbCI6ImFubi5wZXJmaWR5QGhvdG1haWwuY29tIiwiaXNfYWRtaW4iOjEsImlhdCI6MTY1MTg0OTQwMywiZXhwIjoxNjUyMzY3ODAzfQ.-ZjpEpJNwWy98f_CH5v8caCLbDWkwZdZ-uq1lZY7QvI
+
+
+###
+GET http://localhost:3000/api/admins/All
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDE1LCJlbWFpbCI6IjNVU1VBUklPQGxvby5jb20iLCJpc19hZG1pbiI6ImZhbHNlIiwiaWF0IjoxNjUxNTEyODI4LCJleHAiOjE2NTIwMzEyMjh9.7TQudjiF4SCfgJ5xheQds-KTo2Ha9z9zIypTfmLEsoU
+
+
+###
+POST http://localhost:3000/api/users/upload
+
+###
+GET http://localhost:3000/api/users/profile/1062
+
+###
+GET http://localhost:3000/api/working-groups/allOff
+
+###
+DELETE http://localhost:3000/api/admins/25
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDE1LCJlbWFpbCI6IjNVU1VBUklPQGxvby5jb20iLCJpc19hZG1pbiI6ImZhbHNlIiwiaWF0IjoxNjUxNTEyODI4LCJleHAiOjE2NTIwMzEyMjh9.7TQudjiF4SCfgJ5xheQds-KTo2Ha9z9zIypTfmLEsoU 
+
+###
+PUT http://localhost:3000/api/documents/2
+
+#######no vaaa####
+###
+GET http://loc
+
+###
+GET http://localhost:3000/api/working-groups/getUsersByGroup/3
+
+###
+GET http://localhost:3000/api/working-groups/getGroupByUser/10
+
+###
+PUT http://localhost:3000/api/users/resetPassword/1063
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDE1LCJlbWFpbCI6IjNVU1VBUklPQGxvby5jb20iLCJpc19hZG1pbiI6ImZhbHNlIiwiaWF0IjoxNjUxNTEyODI4LCJleHAiOjE2NTIwMzEyMjh9.7TQudjiF4SCfgJ5xheQds-KTo2Ha9z9zIypTfmLEsoU 
+Content-Type: application/json
+
+{
+ "password": "987654321"
+}
+
+####
+GET http://localhost:3000/api/working-groups/miWG
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDM5LCJlbWFpbCI6ImFhYWFAaG90bWFpbC5jb20iLCJpc19hZG1pbiI6MSwiaWF0IjoxNjUxOTQzNDE3LCJleHAiOjE2NTI0NjE4MTd9.icSBuCfoVko6vM_wFn8mPN6gaTAP8_JdldaAuXJyrmA
+
+
+##AÑADE UN USUARIO A UN WORKING-GROUP
+###
+POST http://localhost:3000/api/working-groups/unionGroups/9
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDYzLCJlbWFpbCI6ImFubi5wZXJmaWR5QGhvdG1haWwuY29tIiwiaXNfYWRtaW4iOjEsImlhdCI6MTY1MjM0MTkxNiwiZXhwIjoxNjUyODYwMzE2fQ.SG7VLbrPk2AdgXtZISDaH9d0qguKUI3hwkDvkS7a-SY
+
+###
+GET http://localhost:3000/api/events/eventday/2022-05-27
+
+###
+DELETE http://localhost:3000/api/working-groups/deleteGroup/10
+Authorization: 
+
+###
+POST http://localhost:3000/api/messaging/mail
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDM5LCJlbWFpbCI6ImFhYWFAaG90bWFpbC5jb20iLCJpc19hZG1pbiI6MSwiaWF0IjoxNjUxOTQzNDE3LCJleHAiOjE2NTI0NjE4MTd9.icSBuCfoVko6vM_wFn8mPN6gaTAP8_JdldaAuXJyrmA
+###
+POST http://localhost:3000/api/working-groups/unionGroupsAdmin/8/1039

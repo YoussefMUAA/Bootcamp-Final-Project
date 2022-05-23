@@ -1,0 +1,39 @@
+            ###DOCUMENTS###
+
+###
+GET http://localhost:3000/api/documents
+
+
+###
+GET http://localhost:3000/api/documents/10
+
+
+###
+POST http://localhost:3000/api/documents
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDIyLCJlbWFpbCI6ImpvcmdlcGY5MEBob3RtYWlsLmVzIiwiaXNfYWRtaW4iOiJ0cnVlIiwiaWF0IjoxNjUxNzcyNzQyLCJleHAiOjE2NTIyOTExNDJ9.IsHQ9Z8DNQyipZtt09V6P6vBrII8E4qOB2wfVnVqbwA
+Content-Type: application/json
+
+{
+  "status_aproved": 1,
+  "is_private": 1,
+  "doc_title": "No hay razón para morir",
+  "doc_descritpion": "Manual Supervivencia"
+
+}
+
+###
+PUT http://localhost:3000/api/documents/10
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDIyLCJlbWFpbCI6ImpvcmdlcGY5MEBob3RtYWlsLmVzIiwiaXNfYWRtaW4iOiJ0cnVlIiwiaWF0IjoxNjUxNzcyNzQyLCJleHAiOjE2NTIyOTExNDJ9.IsHQ9Z8DNQyipZtt09V6P6vBrII8E4qOB2wfVnVqbwA
+Content-Type: application/json
+
+{
+  "status_aproved": 1,
+  "is_private": 1,
+  "doc_title": "Manual Spuervivencia",
+  "doc_description": "Manual Spuervivencia",
+  "doc_url": "http://sedici.unlp.edu.ar/bitstream/handle/10915/68494/Tesis.pdf-PDFA.pdf?sequence=1&isAllowed=y"
+}
+
+###
+DELETE http://localhost:3000/api/documents/102
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDYzLCJlbWFpbCI6ImFubi5wZXJmaWR5QGhvdG1haWwuY29tIiwiaXNfYWRtaW4iOjAsImlhdCI6MTY1MjMwMzg5NiwiZXhwIjoxNjUyODIyMjk2fQ.vVN-sWc85vzCNz0gdW5uFv-Xafo685jYupNT0x4Wcl0

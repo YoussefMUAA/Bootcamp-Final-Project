@@ -1,0 +1,34 @@
+###CONTACTS####
+
+###
+GET http://localhost:3000/api/contacts
+
+###
+GET http://localhost:3000/api/contacts/14
+
+###
+POST http://localhost:3000/api/contacts
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDIyLCJlbWFpbCI6ImpvcmdlcGY5MEBob3RtYWlsLmVzIiwiaXNfYWRtaW4iOiJ0cnVlIiwiaWF0IjoxNjUxNzcyNzQyLCJleHAiOjE2NTIyOTExNDJ9.IsHQ9Z8DNQyipZtt09V6P6vBrII8E4qOB2wfVnVqbwA
+Content-Type: application/json
+
+{
+  "name": "Naiguel", 
+  "organization": "Pernambuco", 
+  "email": "maikel"
+}
+
+
+###
+PUT http://localhost:3000/api/contacts/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDIyLCJlbWFpbCI6ImpvcmdlcGY5MEBob3RtYWlsLmVzIiwiaXNfYWRtaW4iOiJ0cnVlIiwiaWF0IjoxNjUxNzcyNzQyLCJleHAiOjE2NTIyOTExNDJ9.IsHQ9Z8DNQyipZtt09V6P6vBrII8E4qOB2wfVnVqbwA
+Content-Type: application/json
+
+{
+  "name": "Prueba 2.0", 
+  "organization": "Evil corp", 
+  "email": "maikel@evilcorp.com" 
+}
+
+###
+DELETE http://localhost:3000/api/contacts/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxMDIyLCJlbWFpbCI6ImpvcmdlcGY5MEBob3RtYWlsLmVzIiwiaXNfYWRtaW4iOiJ0cnVlIiwiaWF0IjoxNjUxNzcyNzQyLCJleHAiOjE2NTIyOTExNDJ9.IsHQ9Z8DNQyipZtt09V6P6vBrII8E4qOB2wfVnVqbwA
